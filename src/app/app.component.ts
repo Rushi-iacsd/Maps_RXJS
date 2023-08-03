@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
 
                     map(n => {
                       delay(1000/n)
-                      return n * 3
+                      return n
                     }),
                     concatMap(n => this._http.get(`${this.baseUrl}/${n}`))
                  )
@@ -43,7 +43,7 @@ export class AppComponent implements OnInit {
                   tap(n => console.log(`Flat using Merge Map ${n}`)),
                   map(n => {
                     delay(1000/n)
-                    return n * 3
+                    return n 
                   }),
                   mergeMap(n => this._http.get(`${this.baseUrl}/${n}`))
                  )
@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
       tap(n => console.log(`Flat using Switch Map ${n}`)),
       map(n => {
         delay(1000/n)
-        return n * 2
+        return n 
       }),
       switchMap(n =>  this._http.get(`${this.baseUrl}/${n}`))
      )                     
@@ -89,10 +89,10 @@ export class AppComponent implements OnInit {
       // })
 
 
-    //  this.postwithConcatMap$
-    //  .subscribe(res => {
-    //   console.log(res)
-    //  })
+     this.postwithConcatMap$
+     .subscribe(res => {
+      console.log(res)
+     })
 
 
      this.postwithMergerMAp$
@@ -101,10 +101,10 @@ export class AppComponent implements OnInit {
      })
 
 
-    //  this.postwithSwitchMap$
-    //  .subscribe(res => {
-    //   console.log(res)
-    //  })
+     this.postwithSwitchMap$
+     .subscribe(res => {
+      console.log(res)
+     })
 
 
   }
